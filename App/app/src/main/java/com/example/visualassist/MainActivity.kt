@@ -1,9 +1,12 @@
 package com.example.visualassist
 
+import android.content.pm.PackageManager
 import android.media.MediaPlayer
 import android.os.Bundle
 import androidx.activity.ComponentActivity
+import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.compose.setContent
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -17,6 +20,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.core.content.ContextCompat
 import com.example.visualassist.ui.theme.VisualAssistTheme
 
 class MainActivity : ComponentActivity() {
@@ -31,12 +35,32 @@ class MainActivity : ComponentActivity() {
                 ) {
                     Mainscreen()
                     MyContent()
+                    fun blah(){
+                        if (ContextCompat.checkSelfPermission(
+                                this ,
+                                android.Manifest.permission.CAMERA
+                            ) == PackageManager.PERMISSION_GRANTED)
+                        {
+                            requestPermissions(arrayOf(android.Manifest.permission.CAMERA) ,101)
                 }
-            }
+
+                        if (ContextCompat.checkSelfPermission(
+                                this ,
+                                android.Manifest.permission.RECORD_AUDIO
+                            ) == PackageManager.PERMISSION_GRANTED)
+                        {
+                            requestPermissions(arrayOf(android.Manifest.permission.RECORD_AUDIO) ,101)
+                        }
+
+                    }
         }
     }
 }
 
+
+
+}
+}
 @Composable
 fun MyContent(){
 
@@ -55,4 +79,4 @@ fun MyContent(){
         }
     }
 }
-    
+
