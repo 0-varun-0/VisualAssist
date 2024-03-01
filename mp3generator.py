@@ -16,10 +16,10 @@ def text_to_speech(text, output_file="output.mp3"):
     engine = pyttsx3.init()
 
     # Set properties (optional)
-    engine.setProperty("rate", 120)
-    engine.setProperty("volume", 1.0)
+    engine.setProperty("rate", 140)
+    engine.setProperty("volume", 1.6)
     voices = engine.getProperty('voices')
-    engine.setProperty('voice', voices[1].id)
+    engine.setProperty('voice', voices[2].id)
 
     # Save the speech as an MP3 file
     engine.save_to_file(text, output_file)

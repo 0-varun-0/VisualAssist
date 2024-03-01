@@ -50,10 +50,9 @@ fun MyContent(){
     Column(modifier = Modifier.fillMaxSize(), verticalArrangement = Arrangement.Center, horizontalAlignment = Alignment.CenterHorizontally) {
 
         Row {
-            // IconButton for Start Action
-            mMediaPlayer.start()
 
+            mMediaPlayer.start()
         }
     }
 }
-
+    
