@@ -50,7 +50,10 @@ android {
 }
 
 dependencies {
-    implementation ("androidx.lifecycle: lifecycle-viewmodel-compose:2.5.1")
+    //implementation ("androidx.lifecycle: lifecycle-viewmodel-compose:2.5.1")
+
+    implementation ("androidx.camera:camera-core:1.0.0")
+    implementation ("androidx.camera:camera-camera2:1.0.0")
     implementation ("com.airbnb.android:lottie-compose:6.0.0")
     implementation("androidx.core:core-ktx:1.12.0")
     implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.7.0")
@@ -60,6 +63,7 @@ dependencies {
     implementation("androidx.compose.ui:ui-graphics")
     implementation("androidx.compose.ui:ui-tooling-preview")
     implementation("androidx.compose.material3:material3")
+    implementation("androidx.appcompat:appcompat:1.6.1")
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")

@@ -35,24 +35,11 @@ class MainActivity : ComponentActivity() {
                 ) {
                     Mainscreen()
                     MyContent()
-                    fun blah(){
-                        if (ContextCompat.checkSelfPermission(
-                                this ,
-                                android.Manifest.permission.CAMERA
-                            ) == PackageManager.PERMISSION_GRANTED)
-                        {
-                            requestPermissions(arrayOf(android.Manifest.permission.CAMERA) ,101)
-                }
-
-                        if (ContextCompat.checkSelfPermission(
-                                this ,
-                                android.Manifest.permission.RECORD_AUDIO
-                            ) == PackageManager.PERMISSION_GRANTED)
-                        {
-                            requestPermissions(arrayOf(android.Manifest.permission.RECORD_AUDIO) ,101)
-                        }
-
+                    if (!requestPermission.CameraPermissions.checkPermission(this)) {
+                        requestPermission.CameraPermissions.requestPermission(this)
                     }
+
+
         }
     }
 }
@@ -60,6 +47,7 @@ class MainActivity : ComponentActivity() {
 
 
 }
+
 }
 @Composable
 fun MyContent(){
