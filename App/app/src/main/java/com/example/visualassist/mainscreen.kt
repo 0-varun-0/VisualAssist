@@ -22,7 +22,7 @@ import com.airbnb.lottie.compose.rememberLottieComposition
 fun Mainscreen() {
     val composition by rememberLottieComposition(LottieCompositionSpec.RawRes(R.raw.listening))
 
-    Column(
+    Column( 
         modifier = Modifier.fillMaxSize(),
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally
